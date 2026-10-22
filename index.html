@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elmoez | Frontend Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Cabinet+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ LOADER ═══════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">ELMOEZ</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text">Initializing<span class="dots">...</span></div>
+    </div>
+    <canvas id="loader-canvas"></canvas>
+  </div>
+
+  <!-- ═══════════════════ CURSOR ═══════════════════ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══════════════════ SCROLL PROGRESS ═══════════════════ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ═══════════════════ BACKGROUND ═══════════════════ -->
+  <div class="bg-layer">
+    <canvas id="particle-canvas"></canvas>
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="#home">
+        <span class="logo-bracket">&lt;</span>ELMOEZ<span class="logo-bracket">/&gt;</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#goals" class="nav-link">Goals</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-text-side">
+        <div class="hero-tag" data-aos="fade-right" data-aos-delay="100">
+          <span class="tag-dot"></span> Available for hire
+        </div>
+        <h1 class="hero-name" data-aos="fade-right" data-aos-delay="200">
+          <span class="name-line">Hi, I'm</span>
+          <span class="logo-bracket">&lt;</span class="name-highlight">Elmoez<span class="logo-bracket">&gt;</span>
+        </h1>
+        <div class="hero-typed-wrap" data-aos="fade-right" data-aos-delay="350">
+          <span class="typed-prefix">// </span>
+          <span id="typed-text"></span>
+          <span class="typed-cursor">_</span>
+        </div>
+        <p class="hero-sub" data-aos="fade-right" data-aos-delay="450">
+          Crafting digital experiences that push the boundaries of the web. Turning ideas into immersive, pixel-perfect realities.
+        </p>
+        <div class="hero-btns" data-aos="fade-right" data-aos-delay="550">
+          <a href="#projects" class="btn-primary">
+            <span>View Projects</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn-ghost">
+            <span>Let's Talk</span>
+          </a>
+        </div>
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="650">
+          <div class="stat">
+            <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="2">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Learning</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-side" data-aos="fade-left" data-aos-delay="300">
+        <div class="image-frame">
+          <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+          <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+          <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
+          <div class="glow-ring"></div>
+          <div class="photo-placeholder">
+            <div class="photo-inner">
+              <i class="fa-solid fa-user-tie"></i>
+              <span></span>
+            </div>
+          </div>
+          <div class="badge badge-html">HTML5</div>
+          <div class="badge badge-css">CSS3</div>
+          <div class="badge badge-js">JS</div>
+          <div class="badge badge-cpp">C++</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-wheel"></div>
+      <span>Scroll</span>
+    </div>
+
+    <!-- Floating geometric shapes -->
+    <div class="geo geo-1"></div>
+    <div class="geo geo-2"></div>
+    <div class="geo geo-3"></div>
+    <div class="geo geo-4"></div>
+  </section>
+
+  <!-- ═══════════════════ DIVIDER ═══════════════════ -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon"><i class="fa-solid fa-code"></i></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// about_me</span>
+        <h2 class="section-title">Who Am I?</h2>
+        <p class="section-sub">A glimpse behind the screen</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Computer Science Student</h3>
+          <p>Egyptian CS student on a mission to master the digital world. Currently diving deep into frontend development, algorithms, and system design.</p>
+        </div>
+        <div class="about-card glass-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-card-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>Design Enthusiast</h3>
+          <p>Obsessed with clean UI, modern aesthetics, and pixel-perfect interfaces. I believe great software must look as good as it performs.</p>
+        </div>
+        <div class="about-card glass-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-card-icon"><i class="fa-solid fa-car-side"></i></div>
+          <h3>Car Enthusiast</h3>
+          <p>When I'm not coding, I'm dreaming about BMW M5 CS engineering — where power meets precision. The same philosophy I apply to software.</p>
+        </div>
+        <div class="about-card glass-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>Driven Achiever</h3>
+          <p>Fueled by ambition for financial freedom, self-improvement, and becoming a world-class software engineer. Every line of code is a step forward.</p>
+        </div>
+      </div>
+
+      <div class="about-main" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-terminal glass-card">
+          <div class="terminal-header">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="t-title">Elmoez@portfolio:~$</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-green">const</span> <span class="t-blue">Elmoez</span> = {</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">name</span>: <span class="t-yellow">"Elmoez"</span>,</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">origin</span>: <span class="t-yellow">"🇪🇬 Egypt"</span>,</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">role</span>: <span class="t-yellow">"Frontend Developer"</span>,</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">status</span>: <span class="t-yellow">"CS Student"</span>,</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">learning</span>: [<span class="t-yellow">"JavaScript"</span>, <span class="t-yellow">"C++"</span>],</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">passion</span>: <span class="t-yellow">"Clean UI &amp; Modern Design"</span>,</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">goals</span>: [<span class="t-yellow">"Top Engineer"</span>, <span class="t-yellow">"Financial Freedom"</span>],</p>
+            <p>&nbsp;&nbsp;<span class="t-cyan">loves</span>: [<span class="t-yellow">"BMW M5 CS"</span>, <span class="t-yellow">"Technology"</span>]</p>
+            <p>};</p>
+            <p class="t-blink"><span class="t-green">▌</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ DIVIDER ═══════════════════ -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon"><i class="fa-solid fa-microchip"></i></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// tech_stack</span>
+        <h2 class="section-title">Skills & Tools</h2>
+        <p class="section-sub">Technologies I wield with confidence</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- HTML -->
+        <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="50">
+          <div class="skill-glow" style="--clr:#e44d26"></div>
+          <div class="skill-icon" style="color:#e44d26"><i class="fa-brands fa-html5"></i></div>
+          <h3>HTML5</h3>
+          <p>Semantic, accessible, and structured markup</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:85%; --clr:#e44d26"></div>
+          </div>
+          <span class="skill-pct">85%</span>
+        </div>
+        <!-- CSS -->
+        <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="skill-glow" style="--clr:#264de4"></div>
+          <div class="skill-icon" style="color:#264de4"><i class="fa-brands fa-css3-alt"></i></div>
+          <h3>CSS3</h3>
+          <p>Animations, Grid, Flexbox, Variables</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:80%; --clr:#264de4"></div>
+          </div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <!-- JavaScript -->
+        <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="150">
+          <div class="skill-glow" style="--clr:#f7df1e"></div>
+          <div class="skill-icon" style="color:#f7df1e"><i class="fa-brands fa-js"></i></div>
+          <h3>JavaScript</h3>
+          <p>DOM, ES6+, async programming</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:65%; --clr:#f7df1e"></div>
+          </div>
+          <span class="skill-pct">65%</span>
+        </div>
+        <!-- Bootstrap -->
+        <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="skill-glow" style="--clr:#7952b3"></div>
+          <div class="skill-icon" style="color:#7952b3"><i class="fa-brands fa-bootstrap"></i></div>
+          <h3>Bootstrap</h3>
+          <p>Responsive, component-based design</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:75%; --clr:#7952b3"></div>
+          </div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <!-- C++ -->
+        <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="250">
+          <div class="skill-glow" style="--clr:#00b4d8"></div>
+          <div class="skill-icon" style="color:#00b4d8"><i class="fa-solid fa-c"></i></div>
+          <h3>C++</h3>
+          <p>OOP, algorithms, data structures</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:55%; --clr:#00b4d8"></div>
+          </div>
+          <span class="skill-pct">55%</span>
+        </div>
+        <!-- Responsive Design -->
+        <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="skill-glow" style="--clr:#06d6a0"></div>
+          <div class="skill-icon" style="color:#06d6a0"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Responsive Design</h3>
+          <p>Mobile-first, cross-device layouts</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:80%; --clr:#06d6a0"></div>
+          </div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <!-- UI/UX -->
+        <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="350">
+          <div class="skill-glow" style="--clr:#ff6b6b"></div>
+          <div class="skill-icon" style="color:#ff6b6b"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>UI/UX Basics</h3>
+          <p>User-centered, clean design principles</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:70%; --clr:#ff6b6b"></div>
+          </div>
+          <span class="skill-pct">70%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ DIVIDER ═══════════════════ -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon"><i class="fa-solid fa-folder-open"></i></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// my_work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">What I've built so far</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Preview</a>
+              <a href="#" class="overlay-btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <h3>Modern Landing Page</h3>
+            <p>A sleek, animated landing page with scroll effects, glassmorphism UI, and full mobile responsiveness.</p>
+            <div class="project-links">
+              <a href="#" class="btn-sm-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--p-clr:#7952b3">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Preview</a>
+              <a href="#" class="overlay-btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+            </div>
+            <h3>E-Commerce UI Kit</h3>
+            <p>A fully responsive e-commerce interface with product cards, filters, and animated cart interactions.</p>
+            <div class="project-links">
+              <a href="#" class="btn-sm-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--p-clr:#06d6a0">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Preview</a>
+              <a href="#" class="overlay-btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>JavaScript</span><span>CSS3</span><span>LocalStorage</span>
+            </div>
+            <h3>Task Manager App</h3>
+            <p>A dynamic to-do application with drag-and-drop, local storage persistence, and smooth animations.</p>
+            <div class="project-links">
+              <a href="#" class="btn-sm-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--p-clr:#ff6b6b">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Preview</a>
+              <a href="#" class="overlay-btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>JavaScript</span><span>API</span><span>CSS</span>
+            </div>
+            <h3>Weather Dashboard</h3>
+            <p>Real-time weather app using OpenWeatherMap API with animated weather icons and city search.</p>
+            <div class="project-links">
+              <a href="#" class="btn-sm-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--p-clr:#f7df1e">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Preview</a>
+              <a href="#" class="overlay-btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <h3>Neon Calculator</h3>
+            <p>A visually stunning calculator with neon aesthetics, keyboard support, and smooth button animations.</p>
+            <div class="project-links">
+              <a href="#" class="btn-sm-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="--p-clr:#00b4d8">
+              <i class="fa-solid fa-user-circle"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Preview</a>
+              <a href="#" class="overlay-btn-ghost"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+            </div>
+            <h3>Portfolio Template</h3>
+            <p>A clean, minimal personal portfolio template with dark theme, smooth scroll, and responsive layout.</p>
+            <div class="project-links">
+              <a href="#" class="btn-sm-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ DIVIDER ═══════════════════ -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon"><i class="fa-solid fa-bullseye"></i></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ═══════════════════ GOALS ═══════════════════ -->
+  <section id="goals" class="goals">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// roadmap</span>
+        <h2 class="section-title">My Goals</h2>
+        <p class="section-sub">The journey I'm building towards</p>
+      </div>
+
+      <div class="goals-timeline">
+        <div class="timeline-line"></div>
+
+        <div class="goal-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="goal-dot"><i class="fa-solid fa-check"></i></div>
+          <div class="goal-card glass-card">
+            <div class="goal-num">01</div>
+            <h3>Master Frontend Fundamentals</h3>
+            <p>Become proficient in HTML, CSS, JavaScript, and responsive design to build stunning, functional interfaces.</p>
+            <div class="goal-badge in-progress">In Progress</div>
+          </div>
+        </div>
+
+        <div class="goal-item right" data-aos="fade-left" data-aos-delay="200">
+          <div class="goal-dot"><i class="fa-solid fa-code"></i></div>
+          <div class="goal-card glass-card">
+            <div class="goal-num">02</div>
+            <h3>Master JavaScript & C++</h3>
+            <p>Deep-dive into advanced JavaScript patterns, data structures, algorithms, and C++ for competitive programming.</p>
+            <div class="goal-badge upcoming">Upcoming</div>
+          </div>
+        </div>
+
+        <div class="goal-item" data-aos="fade-right" data-aos-delay="300">
+          <div class="goal-dot"><i class="fa-brands fa-react"></i></div>
+          <div class="goal-card glass-card">
+            <div class="goal-num">03</div>
+            <h3>Learn Advanced Frameworks</h3>
+            <p>Master React.js, Next.js, and modern tooling to build production-ready, scalable web applications.</p>
+            <div class="goal-badge upcoming">Upcoming</div>
+          </div>
+        </div>
+
+        <div class="goal-item right" data-aos="fade-left" data-aos-delay="400">
+          <div class="goal-dot"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="goal-card glass-card">
+            <div class="goal-num">04</div>
+            <h3>Land First Developer Role</h3>
+            <p>Secure a professional frontend developer position at a top company or exciting startup to gain real-world experience.</p>
+            <div class="goal-badge future">Future</div>
+          </div>
+        </div>
+
+        <div class="goal-item" data-aos="fade-right" data-aos-delay="500">
+          <div class="goal-dot"><i class="fa-solid fa-star"></i></div>
+          <div class="goal-card glass-card">
+            <div class="goal-num">05</div>
+            <h3>Become a High-Level Software Engineer</h3>
+            <p>Evolve into a full-stack or software architect, building impactful products and leading engineering teams globally.</p>
+            <div class="goal-badge future">Future</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ DIVIDER ═══════════════════ -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon"><i class="fa-solid fa-envelope"></i></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// get_in_touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-sub">Let's build something amazing together</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+          <div class="contact-card glass-card">
+            <h3>Let's Talk</h3>
+            <p>Whether you have a project idea, want to collaborate, or just want to say hi — I'm always open to a good conversation.</p>
+            <div class="contact-items">
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="contact-item-label">Email</span>
+                  <span class="contact-item-val">mohmedelmoez@gmail.com</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="contact-item-label">Location</span>
+                  <span class="contact-item-val">Egypt 🇪🇬</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon"><i class="fa-solid fa-circle-check" style="color:#06d6a0"></i></div>
+                <div>
+                  <span class="contact-item-label">Status</span>
+                  <span class="contact-item-val" style="color:#06d6a0">Available for Work</span>
+                </div>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/mohamed-elmoez-903829347/" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/mhmd_moez_6?igsh=aW41Y2tjZjIyaHpp" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-aos="fade-left" data-aos-delay="200">
+          <div class="contact-form glass-card">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Project idea?" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary full-width">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;/</span>Elmoez<span class="logo-bracket">&gt;</span>
+        </div>
+        <p class="footer-text">Designed &amp; Built by <span class="highlight">Elmoez</span> · 2026</p>
+        <p class="footer-quote">"Code is poetry. Make it beautiful."</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
